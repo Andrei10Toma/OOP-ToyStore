@@ -1,0 +1,37 @@
+addcurrency GBP £ 1.10
+setstorecurrency GBP
+loadcsv tests/res/amazon_co-ecommerce_sample.csv
+setstorecurrency EUR
+getstorecurrency
+showproduct aaaaaa
+# typo for the exception
+listmannufacturers
+addcurrency RON lei 0.21
+addcurrency USD $ 0.82
+updateparity RON 0.2
+listcurrencies
+adddiscount PERCENTAGE 50 "EVERYTHING AT HALF PRICE"
+adddiscount PERCENTAGE 30 "WINTER SALE"
+adddiscount FIXED 8 "-8 AT EVERYTHING"
+listdiscounts
+getstorecurrency
+savecsv tests/output/test4/test4_0.csv
+savestore tests/output/test4/test4_0.data
+setstorecurrency RON
+applydiscount PERCENTAGE 45
+applydiscount PERCENTAGE 30
+savecsv tests/output/test4/test4_1.csv
+adddiscount PERCENTAGE 25 "SALES OF 25%"
+applydiscount FIXED 8
+addcurrency RUB ₽ 0.011
+setstorecurrency RUB
+getstorecurrency
+savecsv tests/output/test4/test4_2.csv
+listproductsbymanufacturer Takara Tomy
+listproductsbymanufacturer aaaaaa bbbbbb
+listdiscounts
+loadstore tests/output/test4/test4_0.data
+getstorecurrency
+listdiscounts
+listproductsbymanufacturer Takara Tomy
+quit

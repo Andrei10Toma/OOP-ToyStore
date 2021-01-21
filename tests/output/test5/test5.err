@@ -1,0 +1,56 @@
+exceptions.CommandNotFound: Input command aplydiscount not found.
+	at main.Main.interpretCommand(Main.java:85)
+	at main.Main.main(Main.java:45)
+exceptions.NegativePriceException: The product with price 4.5878048780487815 and id eac7efa5dbd3d667f26eb3d3ab504464 cannot have a fixed discount of 8.0 applied.
+	at store.Store.applyDiscountProducts(Store.java:245)
+	at command.ApplyDiscount.execute(ApplyDiscount.java:50)
+	at command.CommandQueue.executeCommands(CommandQueue.java:25)
+	at main.Main.interpretCommand(Main.java:63)
+	at main.Main.main(Main.java:45)
+exceptions.NegativePriceException: The product with price 0.7500000000000001 and id 30950ba413fbae88b190efb5c7237fc2 cannot have a fixed discount of 5.0 applied.
+	at store.Store.applyDiscountProducts(Store.java:245)
+	at command.ApplyDiscount.execute(ApplyDiscount.java:50)
+	at command.CommandQueue.executeCommands(CommandQueue.java:25)
+	at main.Main.interpretCommand(Main.java:63)
+	at main.Main.main(Main.java:45)
+exceptions.DiscountNotFoundException: Discount PERCENTAGE_DISCOUNT 30.0 not found.
+	at command.ApplyDiscount.execute(ApplyDiscount.java:48)
+	at command.CommandQueue.executeCommands(CommandQueue.java:25)
+	at main.Main.interpretCommand(Main.java:63)
+	at main.Main.main(Main.java:45)
+exceptions.CurrencyEURCantBeChanged: The EUR currency can't be cheanged.
+	at command.UpdateParity.execute(UpdateParity.java:38)
+	at command.CommandQueue.executeCommands(CommandQueue.java:25)
+	at main.Main.interpretCommand(Main.java:63)
+	at main.Main.main(Main.java:45)
+exceptions.NegativePriceException: The product with price 1.2825000000000002 and id eac7efa5dbd3d667f26eb3d3ab504464 cannot have a fixed discount of 8.0 applied.
+	at store.Store.applyDiscountProducts(Store.java:245)
+	at command.ApplyDiscount.execute(ApplyDiscount.java:50)
+	at command.CommandQueue.executeCommands(CommandQueue.java:25)
+	at main.Main.interpretCommand(Main.java:63)
+	at main.Main.main(Main.java:45)
+exceptions.ProductNotFound: Product with ID NuVreauRestanteSemestrulAsta not found.
+	at command.CalculateTotal.execute(CalculateTotal.java:42)
+	at command.CommandQueue.executeCommands(CommandQueue.java:25)
+	at main.Main.interpretCommand(Main.java:63)
+	at main.Main.main(Main.java:45)
+exceptions.ProductNotFound: Product with id NiciSemestrulUrmator not found.
+	at command.ShowProduct.execute(ShowProduct.java:41)
+	at command.CommandQueue.executeCommands(CommandQueue.java:25)
+	at main.Main.interpretCommand(Main.java:63)
+	at main.Main.main(Main.java:45)
+exceptions.ManufacturerNotFound: Manufacturer with name TomaAndrei was not found.
+	at command.ListProductsByManufacturer.execute(ListProductsByManufacturer.java:53)
+	at command.CommandQueue.executeCommands(CommandQueue.java:25)
+	at main.Main.interpretCommand(Main.java:63)
+	at main.Main.main(Main.java:45)
+exceptions.DiscountNotFoundException: Discount FIXED_DISCOUNT 4.0 not found.
+	at command.ApplyDiscount.execute(ApplyDiscount.java:48)
+	at command.CommandQueue.executeCommands(CommandQueue.java:25)
+	at main.Main.interpretCommand(Main.java:63)
+	at main.Main.main(Main.java:45)
+exceptions.DuplicateCurrencyException: Currency with name USD tried to be added
+	at command.AddCurrency.execute(AddCurrency.java:33)
+	at command.CommandQueue.executeCommands(CommandQueue.java:25)
+	at main.Main.interpretCommand(Main.java:63)
+	at main.Main.main(Main.java:45)

@@ -1,0 +1,75 @@
+addcurrency GBP £ 1.10
+setstorecurrency GBP
+loadcsv tests/res/amazon_co-ecommerce_sample.csv
+addcurrency USD $ 0.82
+setstorecurrency USD
+adddiscount PERCENTAGE 25 "EVERYTHING AT 1/4"
+adddiscount FIXED 8 "MINUS 8"
+applydiscount FIXED 8
+applydiscount PERCENTAGE 25
+getstorecurrency
+savecsv tests/output/test5/test5_0.csv
+savestore tests/output/test5/test5_0.data
+addcurrency TRY ₺ 0.11
+addcurrency RUB ₽ 0.011
+adddiscount PERCENTAGE 30 "WINTER SALE"
+listcurrencies
+setstorecurrency RUB
+adddiscount FIXED 5 "BEST SALE EVER"
+applydiscount FIXED 5
+applydiscount PERCENTAGE 30
+savecsv tests/output/test5/test5_1.csv
+loadstore tests/output/test5/test5_0.data
+getstorecurrency
+listdiscounts
+listproductsbymanufacturer A Kent & Cleal game
+adddiscount PERCENTAGE 50 "HALF PRICE"
+# exception here
+applydiscount PERCENTAGE 30
+listcurrencies
+setstorecurrency TRY
+# exception here
+updateparity EUR 2.0
+updateparity TRY 0.1
+setstorecurrency TRY
+savecsv tests/output/test5/test5_2.csv
+setstorecurrency EUR
+applydiscount PERCENTAGE 50
+# exception here
+applydiscount FIXED 8
+listproductsbymanufacturer A Kent & Cleal game
+updateparity USD 0.8
+showproduct 14a65ee16538af1a8e29032a1186e2eb
+showproduct c0904c75d570f0ccc5c8b94c56889d59
+showproduct 5c6f2c519b3e37e915a45130d0d51ef9
+calculatetotal 14a65ee16538af1a8e29032a1186e2eb c0904c75d570f0ccc5c8b94c56889d59 5c6f2c519b3e37e915a45130d0d51ef9
+# exception here
+calculatetotal c0904c75d570f0ccc5c8b94c56889d59 5c6f2c519b3e37e915a45130d0d51ef9 NuVreauRestanteSemestrulAsta
+# exception here
+showproduct NiciSemestrulUrmator
+# exception here
+listproductsbymanufacturer TomaAndrei
+# exception here
+aplydiscount FIXED 4
+# exception here
+applydiscount FIXED 4
+setstorecurrency USD
+savecsv tests/output/test5/test5_3.csv
+savestore tests/output/test5/test5_1.data
+adddiscount PERCENTAGE 32 "RANDOM SALE"
+adddiscount FIXED 20 "ANOTHER RANDOM DISCOUNT"
+# exception here
+addcurrency USD $ 0.5
+setstorecurrency EUR
+applydiscount PERCENTAGE 32
+savecsv tests/output/test5/test5_4.csv
+listdiscounts
+getstorecurrency
+loadstore tests/output/test5/test5_1.data
+listdiscounts
+getstorecurrency
+loadstore tests/output/test2/test2_0_binary.data
+savecsv tests/output/test5/test5_5.csv
+listdiscounts
+getstorecurrency
+quit

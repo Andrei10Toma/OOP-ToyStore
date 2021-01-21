@@ -1,0 +1,4 @@
+exceptions.DiscountNotFoundException: Discount FIXED_DISCOUNT 0.1 not found.
+	at command.ApplyDiscount.execute(ApplyDiscount.java:35)
+	at command.CommandQueue.executeCommand(CommandQueue.java:14)
+	at main.Main.main(Main.java:34)

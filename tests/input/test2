@@ -1,0 +1,20 @@
+addcurrency GBP £ 1.10
+setstorecurrency GBP
+loadcsv tests/res/amazon_co-ecommerce_sample.csv
+setstorecurrency EUR
+savecsv tests/output/test2/test2_0.csv
+addcurrency USD $ 0.82
+listcurrencies
+getstorecurrency
+showproduct 9354e87c34db3d0e347714ae98bc2599
+adddiscount FIXED 1 "EVERYTHING CHEAPER"
+applydiscount FIXED 1
+savestore tests/output/test2/test2_0_binary.data
+adddiscount PERCENTAGE 50 "EVERYTHING AT HALF PRICE"
+applydiscount PERCENTAGE 50
+listdiscounts
+listproducts
+loadstore tests/output/test2/test2_0_binary.data
+savecsv tests/output/test2/test2_1.csv
+listdiscounts
+exit

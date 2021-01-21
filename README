@@ -1,0 +1,41 @@
+Toma Andrei 321CB
+
+    Implementation details:
+    In main class there is a field TEST_NUMBER that will have values between 1 and 5. That value means the number of
+test to be run. The input commands are read from the input files from tests/input/, the output files (CSV, binary,
+command, prints) will be in test/output/test[1-5] and the exceptions will be in test/output/test[1-5]/*.err. Lines are
+read until the end of the file or until the command quit or exit is read. The command is split by " " and then
+interpreted by interpretCommand method with a switch on command[0]. Commented lines from the input files start with
+"# ". The commands listproductsbymanufacturer and adddiscount were modified by me, because in the homework was some
+typos at this 2 commands.
+
+    Used Design Patterns:
+    Singleton in Store - Store has a field Store instance. Store object is initialised with getInstance method. If
+instance is null a new instance will be created, else the previous instance will be returned.
+    Builder in Product - Created a ProductBuilder class that builds a Product with all of his information.
+    Command Design Pattern - I created an interface Command and created a class for each command that implements the
+Command interface. Also, I created a CommandQueue class that adds commands in the queue and executes them when quit
+or exit is met or when the input file ends. In Main the usage of command design pattern can be seen. In interpretCommand
+method there is a switch for command[0]. Depending on the value of command[0] commands are added to the command queue.
+When command exit or quit is met the command queue executes every command added to the queue and then exits the program.
+
+    Nice commands and their implementation (+ BONUS commands):
+    loadcsv - for the reading of the products from the CSV file I used org.apache.commons.csv. All the records from the
+CSV file are read and then added to the store. Everytime when a product is added to the store I check if it is a
+duplicate. If the price record is empty the record will not be extracted. After I will extract a Pair<Double, String>
+with the method from the Helper class, that will have on the left the price value and on the right the currency symbol.
+If the store is not set on the symbol from the Pair an exception will be thrown and then exits the program.
+    savecsv - for the save of the products in a CSV file I used org.apache.commons.csv. The prices of the products will
+be formatted with 3 decimals.
+    savestore - saves the state of the store. Saves the list of discounts, current currency and the list of products.
+    loadstore - loads an older state of the store. Sets the list of discounts, the current currency and the list of
+products with the ones from the loadstore file.
+    setstorecurrency - searches for the input currency name. If not found, an exception is thrown, else the current
+currency is updated and the prices of the products are updated.
+    calculatetotal - calculates the total of all the products with the given id. If one of the product does not exist,
+the total price will not be calculated anymore.
+    listmanufacturers - print the list of all available manufacturers name (except "Not Available").
+    adddiscount - adds a discount to the list if it is not duplicate. If it is a duplicate, an exception will be thrown.
+The date and time of the discount will be initialised with the creation date and time.
+     applydiscount - apply a discount on all products, depending on the discount type. When the discount is applied the
+date and time for the discount will be updated.

@@ -1,0 +1,27 @@
+addcurrency GBP £ 1.10
+setstorecurrency GBP
+loadcsv tests/res/amazon_co-ecommerce_sample.csv
+addcurrency USD $ 0.82
+setstorecurrency USD
+adddiscount PERCENTAGE 25 "25% WINTER SALE"
+adddiscount PERCENTAGE 30 "30% BLACK FRIDAY"
+adddiscount FIXED 0.01 "0.01 SALE"
+applydiscount PERCENTAGE 25
+applydiscount FIXED 0.1
+updateparity USD 0.8
+getstorecurrency
+listdiscounts
+savestore tests/output/test3/test3_0.data
+listproductsbymanufacturer Hornby
+adddiscount PERCENTAGE 50 "EVERYTHING AT HALF"
+applydiscount PERCENTAGE 30
+addcurrency RON LEI 0.21
+listdiscounts
+setstorecurrency RON
+getstorecurrency
+savecsv tests/output/test3/test3_0.csv
+listmanufacturers
+loadstore tests/output/test3/test3_0.data
+getstorecurrency
+listdiscounts
+quit

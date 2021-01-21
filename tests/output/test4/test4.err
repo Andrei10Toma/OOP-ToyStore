@@ -1,0 +1,24 @@
+exceptions.CommandNotFound: Input command listmannufacturers not found.
+	at main.Main.interpretCommand(Main.java:69)
+	at main.Main.main(Main.java:35)
+exceptions.ProductNotFound: Product with id aaaaaa not found.
+	at command.ShowProduct.execute(ShowProduct.java:28)
+	at command.CommandQueue.executeCommand(CommandQueue.java:14)
+	at main.Main.interpretCommand(Main.java:47)
+	at main.Main.main(Main.java:35)
+exceptions.DiscountNotFoundException: Discount PERCENTAGE_DISCOUNT 45.0 not found.
+	at command.ApplyDiscount.execute(ApplyDiscount.java:35)
+	at command.CommandQueue.executeCommand(CommandQueue.java:14)
+	at main.Main.interpretCommand(Main.java:47)
+	at main.Main.main(Main.java:35)
+exceptions.NegativePriceException: The product with price 7.5075 and id 95ddb46815960a546e22a653fbb300e8 cannot have a fixed discount of 8.0 applied.
+	at store.Store.applyDiscountProducts(Store.java:145)
+	at command.ApplyDiscount.execute(ApplyDiscount.java:37)
+	at command.CommandQueue.executeCommand(CommandQueue.java:14)
+	at main.Main.interpretCommand(Main.java:47)
+	at main.Main.main(Main.java:35)
+exceptions.ManufacturerNotFound: Manufacturer with name aaaaaa bbbbbb not found.
+	at command.ListProductsByManufacturer.execute(ListProductsByManufacturer.java:36)
+	at command.CommandQueue.executeCommand(CommandQueue.java:14)
+	at main.Main.interpretCommand(Main.java:47)
+	at main.Main.main(Main.java:35)
